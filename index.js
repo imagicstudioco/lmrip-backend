@@ -33,6 +33,10 @@ app.use("/api/orders", orderRoute);
 app.use("/api/checkout", stripeRoute);
 
 
+app.get('/', (req, res) => {
+  res.send('<h1>LMRIP Backend</h1>')
+})
+
 // Define a new route for handling form submissions
 app.post("/api/catalogue", (req, res) => {
   // Assuming the form data is sent as JSON
