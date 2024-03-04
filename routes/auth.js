@@ -57,4 +57,12 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// LOGOUT
+router.post('/logout', (req, res) => {
+  // Implement logout logic here, such as clearing session data or removing tokens
+  console.log("Received logout request...");
+  // Redirect to login page or send success response
+  res.status(200).json("Logged out successfully");
+});
+
 module.exports = router;

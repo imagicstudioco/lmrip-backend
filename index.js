@@ -23,7 +23,12 @@ mongoose
     console.error("DB Connection Error:", err);
   });
 
-app.use(cors());
+  app.use(cors({
+    origin: 'https://lmrip.co.uk', // Allow requests from this origin
+    methods: ['GET', 'POST', 'DELETE', 'PUT'], // Allow these HTTP methods
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
+  }));
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
